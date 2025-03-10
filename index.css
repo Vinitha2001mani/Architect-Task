@@ -1,0 +1,970 @@
+/* Basic styles for the navbar */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.bar {
+    height: 4px;
+    width: 100%;
+    background-color: black;
+}
+
+@media screen and (max-width: 768px) {
+    /* When the screen is 768px or smaller, hide the links and show the hamburger */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Add some transitions for smooth animation */
+.nav-links li {
+    transition: 0.3s ease;
+}
+
+.navbar .logo,
+.nav-links a {
+    transition: 0.3s;
+}
+
+/* Container */
+.container-one {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-between;
+  }
+  
+  /* Style for the divbox */
+  .divbox {
+    flex: 1 1 45%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin-top: 180px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .divbox p.p {
+    font-size: 40px;
+    font-weight: normal;
+    color: grey;
+    margin-bottom: 10px;
+  }
+  
+  .divbox h6 {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 45px;
+  }
+  
+  .divbox img {
+    max-width: 40px;
+    width: 40px;
+    height: 40px;
+    margin: 10px 10px;
+  }
+  
+  .divbox p.p2 {
+    font-size: 25px;
+    color: grey;
+  }
+  
+  /* Button style */
+  button {
+    background-color:white;
+    color: black;
+    font-size: 16px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+   
+  }
+  
+  
+  
+  button img {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Second column style */
+  .container-one > div {
+    flex: 1 1 45%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .container-one img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Media Queries */
+
+/* For tablets and smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Stack items vertically */
+    .container-one {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .divbox {
+      margin-top: 10px; /* Reduce the top margin */
+      padding: 10px;    /* Optional: reduce padding */
+    }
+    /* Make each div take full width */
+    .divbox, .divbox2 {
+      flex: 1 1 100%; /* Full width on smaller screens */
+    }
+  
+    /* Adjust images size */
+    .divbox img{
+        max-width: 100px;
+        height: 40px;
+        width: 40px;
+    }
+     .divbox2 .div3{
+        max-width: 100%;
+        width: 400px;
+        height: 400px;
+     }
+    /* Adjust button width to full */
+    button {
+      width: 100%; /* Button stretches to full width */
+    }
+    .divbox2 .div4{
+        max-width: 100px;
+        height: 40px;
+        width: 40px;
+    }
+  }
+  
+  /* For very small screens (max-width: 480px) */
+  @media (max-width: 480px) {
+    /* Further reduce container padding */
+    .container-one {
+      padding: 10px;
+    }
+  
+    /* Adjust padding inside divs */
+    .divbox, .divbox2 {
+      padding: 15px;
+    }
+    .divbox {
+      margin-top: 5px; /* Further reduce the top margin for smaller screens */
+    }
+  
+    .divbox2 {
+      align-items: center; /* Center the items for small mobile */
+    }
+  
+    /* Make images smaller */
+    .divbox img{
+        max-width: 100px;
+        height: 20px;
+        width: 20px;
+    }
+    .divbox2 .div3{
+        max-width: 100%;
+        width: 400px;
+        height: 400px;
+     }
+     .divbox2 .div4{
+        max-width: 100px;
+        height: 40px;
+        width: 40px;
+    }
+    /* Adjust button text size */
+    button {
+      font-size: 14px;
+    }
+  
+    /* Make button icon size smaller */
+    button img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    /* Adjust text sizes for small screens */
+    .divbox p.p {
+      font-size: 20px;
+    }
+  
+    .divbox h6 {
+      font-size: 18px;
+    }
+  
+    .divbox p.p2 {
+      font-size: 18px;
+    }
+  }
+  /* Container for the About section */
+.maincontainer {
+    display: flex;
+    justify-content: space-between; /* Space between columns */
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+  }
+  
+  /* Style for each child div */
+  .child1, .child2, .child3 {
+    flex: 1 1 30%; /* Default to take up 30% of the container's width */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for child1 */
+  .child1 img {
+    width: 100%; /* Make images take full width */
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for child2 */
+  .child2 img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Styling for child3 */
+  .child3 h6 {
+    font-size: 45px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: grey;
+  }
+  
+  .child3 .pp1 {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .child3 .btn {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+  }
+  
+  
+  .child3 .btn img {
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Responsive Media Queries */
+  
+  /* For screens smaller than 768px */
+  @media (max-width: 768px) {
+    .maincontainer {
+      flex-direction: column; /* Stack items vertically */
+      gap: 20px;
+    }
+  
+    .child1, .child2, .child3 {
+      flex: 1 1 100%; /* Each child takes full width */
+    }
+  
+    .child1 img, .child2 img {
+      max-width: 100%; /* Images will adjust to full width */
+    }
+  
+    /* Adjust button width to 100% */
+    .child3 .btn {
+      width: 100%;
+    }
+  }
+  
+  /* For very small screens (max-width: 480px) */
+  @media (max-width: 480px) {
+    .maincontainer {
+      padding: 10px; /* Reduce padding for mobile */
+    }
+  
+    .child3 h6 {
+      font-size: 20px; /* Adjust font size for title */
+    }
+  
+    .child3 .pp1 {
+      font-size: 14px; /* Reduce font size for paragraph */
+    }
+  
+    .child3 .btn {
+      font-size: 14px; /* Adjust button text size */
+    }
+  
+    .child3 .btn img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  
+/* Main container for the random section */
+.random {
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between; /* Space between the two sections */
+    gap: 20px; /* Space between the elements */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
+}
+
+/* Container for the first section */
+.random1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Stack image and text vertically */
+    width: 40%; /* Control width for responsiveness, keeping two items in one row */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for the second section */
+.random2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Stack image and text vertically */
+    width: 40%; /* Control width for responsiveness */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image style for both sections */
+.random1img, .random2img {
+   
+    margin-top: 50px;
+    object-fit: cover;
+    
+}
+
+/* Paragraph styling */
+.randomp {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Title style */
+.rmp {
+    font-size: 42px;
+    font-weight: normal;
+    color: grey;
+    margin-bottom: 30px;
+}
+
+/* Responsive Media Queries */
+
+/* For Tablets and smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .random {
+        flex-direction: column; /* Stack the blocks vertically */
+        gap: 20px; /* Adjust gap for smaller screens */
+    }
+
+    /* Adjust width for smaller screens */
+    .random1, .random2 {
+        width: 100%; /* Full width for each block */
+        padding: 20px;
+    }
+
+    .random1img, .random2img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+
+    .randomp {
+        font-size: 14px; /* Adjust font size for better readability */
+        max-width: 90%; /* Reduce max-width to fit smaller screen */
+    }
+
+    .rmp {
+        font-size: 22px; /* Adjust font size of title */
+    }
+}
+
+/* For Mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .random {
+        padding: 20px; /* Reduce padding for small screens */
+    }
+
+    .rmp {
+        font-size: 22px; /* Smaller font size for title */
+        margin-bottom: 20px;
+    }
+
+    .random1, .random2 {
+        width: 100%; /* Full width for each block */
+        flex-direction: column; /* Stack image and text vertically */
+        padding: 15px;
+    }
+
+    .random1img, .random2img {
+        width: 100px; /* Smaller image size */
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .randomp {
+        font-size: 13px; /* Smaller font size for paragraph */
+    }
+}
+.project {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .projectp {
+    font-size: 42px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: grey;
+    text-align: start;
+  }
+  
+  .images-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .image-item {
+    position: relative;
+    width: calc(33.33% - 10px); /* 3 images per row */
+    height: 300px; /* Set a fixed height for all images */
+    overflow: hidden; /* Ensures images fit inside the container without overflow */
+  }
+  .image-item img {
+    width: 100%;
+    height: 100%; /* Ensure images cover the container */
+    object-fit: cover; /* Ensures the image scales to fill the container while maintaining aspect ratio */
+    transition: transform 0.3s ease;
+  }
+  
+  .image-item:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    color: white;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .overlay p {
+    font-size: 18px;
+  }
+  
+  .image-item:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+  }
+/* Contact section styles */
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px;
+   
+  }
+  
+  .contactp {
+    font-size: 42px;
+    font-weight: normal;
+    width: 100%;
+    margin-bottom: 30px;
+    color: grey;
+  }
+  
+  /* Contact form styles */
+  .contact1 {
+    flex: 1;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact1 input,
+  .contact1 textarea {
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    font-size: 16px;
+    background-color: rgb(221, 218, 218);
+    height: 40px;
+    width: 550px;
+  }
+  
+  .contact1 input:focus,
+  .contact1 textarea:focus {
+    background-color: grey;
+    outline: none;
+  }
+  
+  .contact1 textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  .con-btn {
+    background-color: black;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .con-btn img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  
+  /* Contact image styles */
+  .contact2 {
+    flex: 1;
+    max-width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact2 img {
+    max-width: 100%;
+    height: 400px;
+   
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contact1, .contact2 {
+      max-width: 100%;
+    }
+  
+    .contact1 {
+      margin-bottom: 20px;
+    }
+  
+    .contact2 img {
+      max-width: 80%;
+    }
+  }  
+  /* Footer Styling */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color:black;
+    color: white;
+    padding: 40px;
+    gap: 20px;
+  }
+  
+  .footer1 img {
+    max-width: 150px;
+    height: auto;
+  }
+  
+  .footer2, .footer3, .footer4 {
+    flex: 1;
+    min-width: 220px;
+  }
+  
+  .footh4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  ul li i {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .footer4 i {
+    margin-right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .footer2, .footer3, .footer4 {
+      margin-top: 20px;
+      text-align: center;
+    }
+  
+    .footer4 i {
+      margin-right: 20px;
+      font-size: 28px;
+    }
+  
+    .footer1 img {
+      max-width: 120px;
+    }
+  }
+  
+
+
+
+  /* Mobile View */
+@media only screen and (max-width: 768px) {
+
+  /* Navbar */
+  .navbar-brand {
+    width: 100px; /* Adjust logo size for mobile */
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 10px 0; /* Space out the nav items */
+  }
+
+  /* Container-one */
+  .container-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .divbox, .divbox2 {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .divbox img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* About Section */
+  .maincontainer {
+    display: block;
+    text-align: center;
+  }
+
+  .child1, .child2 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .child1 img, .child2 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .child3 {
+    margin-top: 20px;
+  }
+
+  .child3 h6 {
+    font-size: 18px;
+  }
+
+  .child3 p {
+    font-size: 14px;
+  }
+
+  /* Random Section */
+  .random {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .random1, .random2 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .random1 img, .random2 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .randomp {
+    font-size: 14px;
+  }
+
+  /* Project Section */
+  .images-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .image-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .image-item:hover .overlay {
+    opacity: 1;
+  }
+
+  /* Contact Section */
+  .contact1 input,
+  .contact1 textarea,
+  .contact1 button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .contact1 textarea {
+    height: 150px;
+  }
+
+  .contact2 img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Footer Section */
+  .footer {
+    display: block;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer1 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer2, .footer3, .footer4 {
+    margin-top: 20px;
+  }
+
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer ul li {
+    margin: 10px 0;
+  }
+
+  .footer4 i {
+    font-size: 20px;
+    margin: 0 10px;
+  }
+}
+/* Mobile View - Projects Section */
+@media only screen and (max-width: 768px) {
+
+  /* Adjust the text for "Our Projects" */
+  .projectp {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Make the images-container display as a single column on mobile */
+  .images-container {
+    display: flex;
+    flex-direction: column;  /* Stack images vertically */
+    align-items: center;     /* Center-align images */
+    gap: 20px;               /* Space between images */
+  }
+
+  /* Each image-item should take full width of the screen and maintain a square aspect ratio */
+  .image-item {
+    width: 100%;
+    height: 300px;          /* Set fixed height */
+    position: relative;     /* Ensure overlay stays on top */
+    overflow: hidden;       /* Hide any overflowed part of the image */
+  }
+
+  /* Adjust image to cover the entire container while maintaining the aspect ratio */
+  .image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* Ensures the image covers the entire area of the container without distorting */
+  }
+
+  /* Ensure the overlay is centered and looks good on mobile */
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);  /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Show overlay on hover */
+  .image-item:hover .overlay {
+    opacity: 1;
+  }
+}
